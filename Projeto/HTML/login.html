@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/Projeto/CSS/login.css">
+</head>
+<body>
+    
+    <section class="container">
+
+        <div class="formulario">
+            <h1>🌵 Raízes do Nordeste</h1>
+            <h2>Curitiba/PR (Pinheirinho • Capão Raso • Sítio Cercado)</h2>
+            <div class="alerta">
+                <p>Usuário não encontrado ou credenciais incorretas.</p>
+            </div>
+            <form action="#" class="form-caixa">
+                <label for="email" class="form-subtitulo">E-mail</label>
+                <input type="email" name="email" id="email" class="inputBox" placeholder="Ex: teste123@gmail.com">
+                <label for="senha" class="form-subtitulo">Senha</label>
+                <input type="password" name="senha" id="senha" class="inputBox" placeholder="Ex: Senha123">
+                <button class="btnAcessar" id="btnAcessar" onclick="acessar(); return false">Acessar Cardápio</button>
+            </form>
+            <div class="acessDemonst">
+                <h3>Acesso Demonstrativo:</h3>
+                <p>E-mail: teste123@gmail.com | Senha: Senha123</p>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        function acessar() {
+            let email = document.querySelector("#email").value 
+            let senha = document.querySelector("#senha").value
+            let alerta = document.querySelector(".alerta")
+
+            if(email == 'teste123@gmail.com' && senha == 'Senha123') {
+                location.href = 'home.html'
+            } else {
+                alerta.style.display = 'block'
+                setTimeout(() => {
+                    alerta.style.display = 'none'
+                }, 3000);
+            }
+        }
+    </script>
+
+</body>
+</html>
