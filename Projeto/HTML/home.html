@@ -4,10 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/Projeto/CSS/home.css">
 </head>
 <body>
 
-    <h1>Teste</h1>
+    <header>
+        <div class="logoOpt">
+            <h2>🌵 Raízes do Nordeste</h2>
+            <select name="opcoes" id="opcoes" class="opcoes">
+                <option value="pinheirinho">Unidade Pinheirinho</option>
+                <option value="capaoRaso">Unidade Capão Raso</option>
+                <option value="sitioCercado">Unidade Sítio Cercado</option>
+            </select>
+        </div>
+        <div>
+            <button class="btnSair" id="btnSair" onclick="sair();return false">Sair</button>
+        </div>
+    </header>
+
+    <div class="boasVindas">
+        <h2>☀️ Sabores autênticos do Nordeste em Curitiba ☀️</h2>
+        <p>Faça seu pedido online de forma rápida e segura.</p>
+    </div>
+
+    <section class="cardapio">
+        <h3>Cardápio</h3>
+        <div class="itensCardapio" id="itensCardapio">
+            
+        </div>
+    </section>
+
+    <section class="carrinhoSecao">
+        <h3>Carrinho de Compras</h3>
+        <div class="itensCarrinho" id="itensCarrinho">
+            
+        </div>
+        <div class="totalCarrinho">
+            <p>Total: R$ <span id="valorTotal">0.00</span></p>
+        </div>
+    </section>
+
+    <script src="/Projeto/JS/home.js"></script>
     
 </body>
 </html>
