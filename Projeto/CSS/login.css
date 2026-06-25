@@ -54,13 +54,13 @@ body {
 }
 
 .form-subtitulo {
-    margin-top: 36px;
+    margin-top: 24px;
     margin-bottom: 6px;
 }
 
 .btnAcessar {
     background-color: var(--laranja-claro);
-    margin-top: 36px;
+    margin-top: 24px;
     margin-bottom: 12px;
     padding: 16px;
     border-radius: 8px;
@@ -88,6 +88,8 @@ body {
 .acessDemonst {
     text-align: center;
     border-top: 2px dotted;
+    padding-top: 10px;
+    width: 100%;
 }
 
 .alerta {
@@ -100,4 +102,21 @@ body {
     text-align: center;
     border-radius: 8px;
     box-shadow: 2px 2px black;
+}
+
+.link-alternar {
+    text-align: center;
+    color: var(--marrom);
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+
+.link-alternar:hover {
+    color: var(--laranja-escuro);
+}
+
+.escondido {
+    display: none !important;
 }

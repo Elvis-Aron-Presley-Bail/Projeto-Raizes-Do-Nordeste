@@ -13,16 +13,38 @@
         <div class="formulario">
             <h1>🌵 Raízes do Nordeste</h1>
             <h2>Curitiba/PR (Pinheirinho • Capão Raso • Sítio Cercado)</h2>
+            
             <div class="alerta">
-                <p>Usuário não encontrado ou credenciais incorretas.</p>
+                <p>Usuário não encontrado ou senha incorreta.</p>
             </div>
-            <form action="#" class="form-caixa">
+
+            <form action="#" class="form-caixa" id="formLogin">
                 <label for="email" class="form-subtitulo">E-mail</label>
                 <input type="email" name="email" id="email" class="inputBox" placeholder="Ex: teste123@gmail.com">
+                
                 <label for="senha" class="form-subtitulo">Senha</label>
                 <input type="password" name="senha" id="senha" class="inputBox" placeholder="Ex: Senha123">
+                
                 <button class="btnAcessar" id="btnAcessar" onclick="acessar(); return false">Acessar Cardápio</button>
+                
+                <p class="link-alternar" onclick="alternarFormularios()">Não tem conta? Criar Conta</p>
             </form>
+
+            <form action="#" class="form-caixa escondido" id="formCadastro">
+                <label for="cadNome" class="form-subtitulo">Nome Completo</label>
+                <input type="text" name="cadNome" id="cadNome" class="inputBox" placeholder="Ex: Elvis Aron Presley Bail">
+                
+                <label for="cadEmail" class="form-subtitulo">E-mail</label>
+                <input type="email" name="cadEmail" id="cadEmail" class="inputBox" placeholder="Ex: teste123@gmail.com"
+                
+                <label for="cadSenha" class="form-subtitulo">Senha</label>
+                <input type="password" name="cadSenha" id="cadSenha" class="inputBox" placeholder="Senha123">
+                
+                <button class="btnAcessar" id="btnCadastrar" onclick="criarConta(); return false">Cadastrar</button>
+                
+                <p class="link-alternar" onclick="alternarFormularios()">Já tem uma conta? Fazer Login</p>
+            </form>
+
             <div class="acessDemonst">
                 <h3>Acesso Demonstrativo:</h3>
                 <p>E-mail: teste123@gmail.com | Senha: Senha123</p>
