@@ -27,6 +27,14 @@
         <p>Faça seu pedido online de forma rápida e segura.</p>
     </div>
 
+    <div class="fidelidadeSecao">
+        <h3>🌵 Programa de Fidelidade Raízes</h3>
+        <p>A cada R$ 100,00 em compras, você ganha 1 cupom de 10% de desconto para usar na próxima compra!</p>
+        <div class="fidelidadeStatus">
+            <p>Seus cupons de 10% disponíveis: <strong><span id="saldoFidelidade">0</span></strong></p>
+        </div>
+    </div>
+
     <section class="cardapio">
         <h3>Cardápio</h3>
         <div class="itensCardapio" id="itensCardapio">
@@ -41,6 +49,7 @@
         </div>
         <div class="totalCarrinho">
             <p>Total: R$ <span id="valorTotal">0.00</span></p>
+            <button class="btnFinalizar escondido" id="btnFinalizar" onclick="finalizarPedido()">Finalizar Pedido</button>
         </div>
     </section>
 
