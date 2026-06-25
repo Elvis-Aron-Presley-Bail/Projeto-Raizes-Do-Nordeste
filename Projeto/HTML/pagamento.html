@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="/Projeto/CSS/pagamento.css">
+</head>
+<body>
+
+    <header>
+        <div class="logoOpt">
+            <h2>🌵 Raízes do Nordeste</h2>
+            <h3 id="unidadeSelecionadaText">Unidade: ...</h3>
+        </div>
+        <div>
+            <button class="btnVoltar" onclick="voltar();return false">Voltar</button>
+        </div>
+    </header>
+
+    <section class="container">
+        
+        <div class="formulario">
+            <h1>Finalizar Pedido</h1>
+
+            <div class="alerta" id="alertaPagamento">
+                <p>Por favor, preencha todos os campos obrigatórios.</p>
+            </div>
+
+            <div class="resumoPedido">
+                <h3>Resumo do seu Pedido:</h3>
+                <div id="listaItensResumo">
+                    
+                </div>
+                <div class="totalPedido">
+                    <p>Subtotal: R$ <span id="subtotalResumo">0.00</span></p>
+                    <p id="linhaDesconto" class="descontoTexto escondido">Cupom Fidelidade (10%): -R$ <span id="descontoResumo">0.00</span></p>
+                    <p>Total Geral: R$ <span id="totalResumo">0.00</span></p>
+                </div>
+            </div>
+
+            <form action="#" class="form-caixa" id="formPagamento">
+                
+                <label for="metodoEntrega" class="form-subtitulo">Como deseja receber?</label>
+                <select name="metodoEntrega" id="metodoEntrega" class="inputBox" onchange="alternarEntrega(this.value)">
+                    <option value="entrega">Entrega (Curitiba - Unidade selecionada)</option>
+                    <option value="retirada">Retirar na Loja</option>
+                </select>
+
+                <div id="secaoEndereco">
+                    <label for="nomeCliente" class="form-subtitulo">Seu Nome</label>
+                    <input type="text" id="nomeCliente" class="inputBox" placeholder="Ex: Elvis Bail">
+
+                    <label for="rua" class="form-subtitulo">Rua / Avenida</label>
+                    <input type="text" id="rua" class="inputBox" placeholder="Ex: Rua Exemplo">
+
+                    <label for="numeroCasa" class="form-subtitulo">Número da Casa</label>
+                    <input type="text" id="numeroCasa" class="inputBox" placeholder="Ex: 123">
+                </div>
+
+                <label for="metodoPagamento" class="form-subtitulo">Forma de Pagamento</label>
+                <select name="metodoPagamento" id="metodoPagamento" class="inputBox" onchange="alternarMetodoPagamento(this.value)">
+                    <option value="pix">Pix</option>
+                    <option value="cartaoDebito">Cartão de Débito</option>
+                    <option value="cartaoCredito">Cartão de Crédito</option>
+                    <option value="dinheiro">Dinheiro</option>
+                </select>
+
+                <div id="detalhesPagamento">
+                    
+                    <div id="secaoPix">
+                        <p class="form-subtitulo" style="text-align: center;">Escaneie o QR Code abaixo para pagar:</p>
+                        <div class="caixaQrCode">
+                            <span>QR CODE</span>
+                        </div>
+                    </div>
+
+                    <div id="secaoCartao" class="escondido">
+                        <label for="numeroCartao" class="form-subtitulo">Número do Cartão</label>
+                        <input type="text" id="numeroCartao" class="inputBox" placeholder="0000 0000 0000 0000">
+
+                        <label for="nomeCartao" class="form-subtitulo">Nome do Titular</label>
+                        <input type="text" id="nomeCartao" class="inputBox" placeholder="Ex: ELVIS A BAIL">
+
+                        <div class="linhaDupla">
+                            <div class="campoMetade">
+                                <label for="validadeCartao" class="form-subtitulo">Validade</label>
+                                <input type="text" id="validadeCartao" class="inputBox" placeholder="MM/AA">
+                            </div>
+                            <div class="campoMetade">
+                                <label for="cvvCartao" class="form-subtitulo">CVV</label>
+                                <input type="text" id="cvvCartao" class="inputBox" placeholder="123">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="secaoTroco" class="escondido">
+                        <label for="trocoPara" class="form-subtitulo">Precisa de troco para quanto?</label>
+                        <input type="text" id="trocoPara" class="inputBox" placeholder="Ex: 50.00">
+                    </div>
+
+                </div>
+
+                <button class="btnConfirmar" onclick="confirmarPedido(); return false">Confirmar Pedido</button>
+            </form>
+
+        </div>
+
+    </section>
+
+    <div id="modalAcompanhamento" class="modal-sobreposicao escondido">
+        <div class="modal-conteudo">
+            <h2>🌵 Seu Pedido</h2>
+            
+            <div class="passosAcompanhamento">
+                <div class="passo ativo" id="passo1">
+                    <span class="icone-passo">🍳</span>
+                    <p>Pedido sendo preparado...</p>
+                </div>
+                <div class="passo" id="passo2">
+                    <span class="icone-passo">🛵</span>
+                    <p id="textoPasso2">Saiu para entrega...</p>
+                </div>
+                <div class="passo" id="passo3">
+                    <span class="icone-passo">✨</span>
+                    <p id="textoPasso3">Pedido chegou! Bom apetite!</p>
+                </div>
+            </div>
+
+            <div id="infoFidelidadeAcumulado" class="alertaFidelidade">
+                
+            </div>
+
+            <button class="btnFecharModal escondido" id="btnFecharModal" onclick="fecharStatusPedido()">Fechar</button>
+        </div>
+    </div>
+
+    <script src="/Projeto/JS/pagamento.js"></script>
+    
+</body>
+</html>
