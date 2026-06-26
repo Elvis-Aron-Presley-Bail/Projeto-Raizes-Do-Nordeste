@@ -20,7 +20,10 @@ body {
     flex-direction: column;
     align-items: center;
     padding-bottom: 40px;
-    background-color: #faf9f6;
+    background-image: url(fundoLogin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 header {
@@ -136,7 +139,7 @@ header {
 }
 
 .descontoTexto {
-    color: #a01c1c;
+    color: red;
     font-weight: bold;
 }
 
@@ -179,7 +182,7 @@ header {
 
 .linhaDupla {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
     width: 100%;
 }
 
@@ -297,6 +300,11 @@ header {
     width: 100%;
 }
 
+.secaoEndereco {
+    display: flex;
+    flex-direction: column;
+}
+
 .btnFecharModal {
     background-color: var(--laranja-claro);
     padding: 10px 32px;
@@ -317,4 +325,9 @@ header {
 
 .escondido {
     display: none !important;
+}
+
+.secaoCartao {
+    display: flex;
+    flex-direction: column;
 }
