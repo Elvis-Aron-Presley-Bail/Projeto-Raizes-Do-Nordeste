@@ -23,7 +23,17 @@
                 <input type="email" name="email" id="email" class="inputBox" placeholder="Ex: teste123@gmail.com">
                 
                 <label for="senha" class="form-subtitulo">Senha</label>
-                <input type="password" name="senha" id="senha" class="inputBox" placeholder="Ex: Senha123">
+                <div class="campo-senha-container">
+                    <input type="password" name="senha" id="senha" class="inputBox" placeholder="Ex: Senha123">
+                    <span class="icone-olho" onclick="alternarVisibilidadeSenha('senha')">🌑</span>
+                </div>
+
+                <div class="lgpd-container">
+                    <input type="checkbox" id="aceiteLgpd" class="checkboxLgpd">
+                    <label for="aceiteLgpd" class="lgpd-texto">
+                        Li e concordo com o tratamento dos meus dados pessoais para fins de fidelização, conforme descrito na Política de Privacidade e em conformidade com a LGPD.
+                    </label>
+                </div>
                 
                 <button class="btnAcessar" id="btnAcessar" onclick="acessar(); return false">Acessar Cardápio</button>
                 
@@ -35,10 +45,13 @@
                 <input type="text" name="cadNome" id="cadNome" class="inputBox" placeholder="Ex: Elvis Aron Presley Bail">
                 
                 <label for="cadEmail" class="form-subtitulo">E-mail</label>
-                <input type="email" name="cadEmail" id="cadEmail" class="inputBox" placeholder="Ex: teste123@gmail.com"
+                <input type="email" name="cadEmail" id="cadEmail" class="inputBox" placeholder="Ex: teste123@gmail.com">
                 
                 <label for="cadSenha" class="form-subtitulo">Senha</label>
-                <input type="password" name="cadSenha" id="cadSenha" class="inputBox" placeholder="Senha123">
+                <div class="campo-senha-container">
+                    <input type="password" name="cadSenha" id="cadSenha" class="inputBox" placeholder="Senha123">
+                    <span class="icone-olho" onclick="alternarVisibilidadeSenha('cadSenha')">☀️</span>
+                </div>
                 
                 <button class="btnAcessar" id="btnCadastrar" onclick="criarConta(); return false">Cadastrar</button>
                 

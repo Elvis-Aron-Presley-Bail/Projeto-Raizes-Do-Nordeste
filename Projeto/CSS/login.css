@@ -58,6 +58,50 @@ body {
     margin-bottom: 6px;
 }
 
+.campo-senha-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.campo-senha-container .inputBox {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.icone-olho {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+}
+
+.lgpd-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.checkboxLgpd {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: var(--laranja-claro);
+}
+
+.lgpd-texto {
+    font-size: 12px;
+    color: var(--marrom);
+    cursor: pointer;
+    line-height: 1.4;
+}
+
 .btnAcessar {
     background-color: var(--laranja-claro);
     margin-top: 24px;
