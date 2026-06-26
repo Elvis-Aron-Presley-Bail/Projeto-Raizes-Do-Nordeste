@@ -125,6 +125,94 @@ header {
     box-shadow: 1px 1px black;
 }
 
+.promocaoSecao {
+    width: 90%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.promocaoSecao h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--laranja-escuro);
+    text-shadow: 1px 1px black;
+}
+
+.caixaPromocao {
+    border: 3px dashed var(--laranja-escuro);
+    border-radius: 12px;
+    background: whitesmoke;
+    padding: 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 4px 4px 0px black;
+    position: relative;
+    text-align: center;
+}
+
+.seloPromocao {
+    position: absolute;
+    top: -14px;
+    background-color: var(--laranja-claro);
+    color: black;
+    font-weight: bold;
+    padding: 4px 16px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0px black;
+    font-size: 14px;
+}
+
+.caixaPromocao h2 {
+    color: var(--marrom);
+    margin-top: 5px;
+    font-size: 22px;
+}
+
+.promocaoItens {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 18px 0;
+    border-bottom: 1px dashed var(--marrom);
+    padding-bottom: 18px;
+}
+
+.itemCombo {
+    flex: 1 1 180px;
+    text-align: center;
+    background: var(--amarelo-claro);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid black;
+    box-shadow: 2px 2px black;
+}
+
+.itemCombo h4 {
+    font-size: 16px;
+    color: var(--marrom);
+    margin-bottom: 4px;
+}
+
+.itemCombo p {
+    font-size: 13px;
+    color: #444;
+}
+
+.precoPromo {
+    font-size: 24px;
+    color: red;
+    font-weight: bold;
+    text-shadow: 1px 1px white;
+    margin-bottom: 10px;
+}
+
 .itensCardapio {
     border: 1px solid;
     display: flex;

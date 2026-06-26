@@ -2,6 +2,30 @@ function sair() {
   location.href = 'login.html'
 }
 
+const promocoesPorUnidade = {
+  pinheirinho: {
+      titulo: "Combo Pinheirinho",
+      precoCombo: 42.90,
+      comida: { nome: "Baião de Dois", desc: "Feijão verde, arroz e queijo coalho." },
+      bebida: { nome: "Suco de Cajá", desc: "Suco natural e bem gelado." },
+      sobremesa: { nome: "Cartola", desc: "Banana frita com queijo e canela." }
+  },
+  capaoRaso: {
+      titulo: "Combo Capão Raso",
+      precoCombo: 45.00,
+      comida: { nome: "Escondidinho", desc: "Purê de macaxeira com carne de sol." },
+      bebida: { nome: "Refri Cajuína", desc: "O autêntico sabor do caju." },
+      sobremesa: { nome: "Bolo de Rolo", desc: "Fatia artesanal com goiabada." }
+  },
+  sitioCercado: {
+      titulo: "Combo Sítio Cercado",
+      precoCombo: 44.00,
+      comida: { nome: "Rubacão", desc: "Baião cremoso com nata e coalho." },
+      bebida: { nome: "Caldo de Cana", desc: "Garapa moída na hora." },
+      sobremesa: { nome: "Queijo Coalho", desc: "Espeto grelhado servido com mel." }
+  }
+};
+
 const cardapiosPorUnidade = {
   pinheirinho: [
       {
@@ -178,8 +202,55 @@ const itensCarrinho = document.querySelector("#itensCarrinho");
 const valorTotal = document.querySelector("#valorTotal");
 const opcoesUnidade = document.querySelector("#opcoes");
 const btnFinalizar = document.querySelector("#btnFinalizar");
+const containerPromocao = document.querySelector("#promocaoDoDiaContainer");
 
 let carrinho = [];
+
+function renderizarPromocao(unidade) {
+  const promo = promocoesPorUnidade[unidade];
+  
+  containerPromocao.innerHTML = `
+      <div class="caixaPromocao">
+          <div class="seloPromocao">COMBO PROMOCIONAL</div>
+          <h2>${promo.titulo}</h2>
+          
+          <div class="promocaoItens">
+              <div class="itemCombo">
+                  <h4>🍳 ${promo.comida.nome}</h4>
+                  <p>${promo.comida.desc}</p>
+              </div>
+              <div class="itemCombo">
+                  <h4>🍹 ${promo.bebida.nome}</h4>
+                  <p>${promo.bebida.desc}</p>
+              </div>
+              <div class="itemCombo">
+                  <h4>✨ ${promo.sobremesa.nome}</h4>
+                  <p>${promo.sobremesa.desc}</p>
+              </div>
+          </div>
+
+          <p class="precoPromo">Tudo por apenas R$ ${promo.precoCombo.toFixed(2)}</p>
+          <button class="btnAdicionar" onclick="adicionarComboAoCarrinho('${unidade}')">Adicionar Combo</button>
+      </div>
+  `;
+}
+
+function adicionarComboAoCarrinho(unidade) {
+  const promo = promocoesPorUnidade[unidade];
+  const itemExistente = carrinho.find(item => item.nome === promo.titulo);
+
+  if (itemExistente) {
+      itemExistente.quantidade += 1;
+  } else {
+      carrinho.push({
+          nome: promo.titulo,
+          preco: promo.precoCombo,
+          quantidade: 1
+      });
+  }
+
+  atualizarCarrinho();
+}
 
 function renderizarCardapio(unidade) {
 const cardapioAtivo = cardapiosPorUnidade[unidade];
@@ -265,7 +336,6 @@ function finalizarPedido() {
   }
 }
 
-// Carrega a quantidade de cupons de 10% disponíveis do cliente na tela
 function carregarSaldoFidelidade() {
   const cupons = parseInt(localStorage.getItem("cuponsDisponiveisRaizes")) || 0;
   document.querySelector("#saldoFidelidade").innerText = cupons;
@@ -275,7 +345,9 @@ opcoesUnidade.addEventListener("change", function() {
 carrinho = [];
 atualizarCarrinho();
 renderizarCardapio(this.value);
+renderizarPromocao(this.value);
 });
 
 renderizarCardapio(opcoesUnidade.value);
+renderizarPromocao(opcoesUnidade.value);
 carregarSaldoFidelidade();
