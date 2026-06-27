@@ -1,5 +1,5 @@
 function sair() {
-  location.href = 'login.html'
+  location.href = 'index.html'
 }
 
 const promocoesPorUnidade = {
